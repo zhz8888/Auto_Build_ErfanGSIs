@@ -23,8 +23,10 @@ jobs:
     runs-on: ubuntu-18.04
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-    - uses: actions/checkout@v2
-      
+
+    - name: Check Out
+      uses: actions/checkout@v2
+
     - name: Fix Apt Problem & Clean Up
       run: |
         docker rmi `docker images -q`
