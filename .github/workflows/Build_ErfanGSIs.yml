@@ -51,5 +51,5 @@ jobs:
        - name: Upload GSI Images
          uses: actions/upload-artifact@v2
          with:
+           name: GSI-Images
            path: final/GSI.xz
-           if-no-files-found: ERROR:No such file
