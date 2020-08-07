@@ -47,9 +47,10 @@ jobs:
        - name: Zip GSI Images
          run: |
            mkdir final
-           tar -Jcvf final/GSI.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/
+           tar -Jcvf final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
+           tar -Jcvf final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
        - name: Upload GSI Images
          uses: actions/upload-artifact@v2
          with:
            name: GSI-Images
-           path: final/GSI.xz
+           path: final
