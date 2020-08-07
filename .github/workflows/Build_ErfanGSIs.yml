@@ -48,7 +48,7 @@ jobs:
        - name: Zip GSI  
          run: |
            mkdir final
-           tar -Jcvf final/GSI.xz /home/runner/work/Actions_Build_ErfanGSIs/Actions_Build_ErfanGSIs/ErfanGSIs/output/
+           tar -Jcvf final/GSI.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/
        - name: Upload GSI to BitSend
          uses: actions/upload-artifact@v2
          with:
