@@ -71,14 +71,14 @@ jobs:
 #    - name: Upload Aonly GSI Images
 #      uses: actions/upload-artifact@v2
 #      with:
-#        name: $ROM_NAME-Aonly
+#        name: Aonly-Image
 #        path: final/*Aonly.xz
 #        if-no-files-found: error
 
 #    - name: Upload AB GSI Images
 #      uses: actions/upload-artifact@v2
 #      with:
-#        name: $ROM_NAME-AB
+#        name: AB-Image
 #        path: final/*AB.xz
 #        if-no-files-found: error
 
