@@ -20,40 +20,40 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-       - name: Fix Apt Problem & Clean Up
-         run: |
-           docker rmi `docker images -q`
-           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
-           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
-           sudo -E apt-get update
-           sudo -E apt-get -y autoremove --purge
-           sudo -E apt-get clean 
-       - name: Initialization Environment
-         run: |
-           sudo -E apt-get -qq update
-           sudo -E apt-get -y upgrade
-           sudo -E apt-get -qq install git openjdk-8-jdk wget gzip bzip2 tar rar unzip
-       - name: Clone ErfanGSI Source Code
-         run: |
-           git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
-       - name: Setting Up ErfanGSI Requirements
-         run: |
-           sudo chmod -R 777 ErfanGSIs
-           cd ErfanGSIs
-           sudo bash setup.sh
-       - name: Download Stock Rom & Generate GSI
-         run: |
-           sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
-       - name: Zip GSI Images
-         run: |
-           mkdir final
-           tar -Jcvf final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
-           tar -Jcvf final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
-       # 下面两项为开启Actions的SSH，仅作为调试使用，如需使用则删除 '#' 和后面的空格即可
-       # - name: SSH Connection To Actions
-       #   uses: P3TERX/debugger-action@master
-       - name: Upload GSI Images
-         uses: actions/upload-artifact@v2
-         with:
-           name: GSI-Images
-           path: final
+    - name: Fix Apt Problem & Clean Up
+      run: |
+        docker rmi `docker images -q`
+        sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
+        sudo -E apt-get update
+        sudo -E apt-get -y autoremove --purge
+        sudo -E apt-get clean 
+    - name: Initialization Environment
+      run: |
+        sudo -E apt-get -qq update
+        sudo -E apt-get -y upgrade
+        sudo -E apt-get -qq install git openjdk-8-jdk wget gzip bzip2 tar rar unzip
+    - name: Clone ErfanGSI Source Code
+      run: |
+        git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
+    - name: Setting Up ErfanGSI Requirements
+      run: |
+        sudo chmod -R 777 ErfanGSIs
+        cd ErfanGSIs
+        sudo bash setup.sh
+    - name: Download Stock Rom & Generate GSI
+      run: |
+        sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+    - name: Zip GSI Images
+      run: |
+        mkdir final
+        tar -Jcvf final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
+        tar -Jcvf final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
+    # 下面两项为开启Actions的SSH，仅作为调试使用，如需使用则删除 '#' 和后面的空格即可
+    # - name: SSH Connection To Actions
+    #   uses: P3TERX/debugger-action@master
+    - name: Upload GSI Images
+      uses: actions/upload-artifact@v2
+      with:
+        name: GSI-Images
+        path: final
