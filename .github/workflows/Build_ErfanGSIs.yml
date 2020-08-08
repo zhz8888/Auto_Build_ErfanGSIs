@@ -61,29 +61,23 @@ jobs:
         mkdir final
         tar -Jcvf final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
         tar -Jcvf final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
-
-    - name: Upload GSI Images
-      run: |
-         curl -sL https://git.io/file-transfer | sh
-         ./transfer bit final/$ROM_NAME-Aonly.xz
-         ./transfer bit final/$ROM_NAME-AB.xz
         
-#    - name: Upload Aonly GSI Images
-#      uses: actions/upload-artifact@v2
-#      with:
-#        name: Aonly-Image
-#        path: final/*Aonly.xz
-#        if-no-files-found: error
+    - name: Upload Aonly GSI Images
+      uses: actions/upload-artifact@v2
+      with:
+        name: Aonly-Image
+        path: final/*Aonly.xz
+        if-no-files-found: error
 
-#    - name: Upload AB GSI Images
-#      uses: actions/upload-artifact@v2
-#      with:
-#        name: AB-Image
-#        path: final/*AB.xz
-#        if-no-files-found: error
+    - name: Upload AB GSI Images
+      uses: actions/upload-artifact@v2
+      with:
+        name: AB-Image
+        path: final/*AB.xz
+        if-no-files-found: error
 
-    # 下面两项为开启Actions的SSH，仅作为调试使用，如需使用则删除 '#' 和后面的空格即可
-    # - name: SSH Connection To Actions
-    #   uses: P3TERX/debugger-action@master
-    # 当有任务失败时打开SSH，建议搭配上面使用，使用方法同上
-    #   if: failure()
+#    下面两项为开启Actions的SSH，仅作为调试使用，如需使用则删除前面的 '#' 即可
+#    - name: SSH Connection To Actions
+#      uses: P3TERX/debugger-action@master
+#    当有任务失败时打开SSH，建议搭配上面使用，使用方法同上
+#      if: failure()
