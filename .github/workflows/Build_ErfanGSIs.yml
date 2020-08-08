@@ -36,6 +36,12 @@ jobs:
 #        sudo -E apt-get -y autoremove --purge
 #        sudo -E apt-get clean 
 
+#    - name: Initialization Environment
+#      run: |
+#        sudo -E apt-get -qq update
+#        sudo -E apt-get -y upgrade
+#        sudo -E apt-get -qq install git openjdk-8-jdk wget gzip bzip2 tar rar unzip
+
     - name: Initialization Environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -63,12 +69,6 @@ jobs:
         sudo -E apt-get install git openjdk-8-jdk wget gzip bzip2 tar rar unzip -y
         sudo -E apt-get autoremove --purge -y
         sudo -E apt-get clean
-
-#    - name: Initialization Environment
-#      run: |
-#        sudo -E apt-get -qq update
-#        sudo -E apt-get -y upgrade
-#        sudo -E apt-get -qq install git openjdk-8-jdk wget gzip bzip2 tar rar unzip
         
     - name: Clone ErfanGSI Source Code
       run: |
