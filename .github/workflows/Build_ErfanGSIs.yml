@@ -74,7 +74,7 @@ jobs:
       run: |
         git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
         
-    - name: Setting Up ErfanGSI Requirements
+    - name: Set Up ErfanGSI Requirements
       run: |
         sudo chmod -R 777 ErfanGSIs
         cd ErfanGSIs
