@@ -54,37 +54,45 @@ jobs:
         sudo -E apt-get install git openjdk-8-jdk wget gzip bzip2 tar rar unzip -y
         sudo -E apt-get autoremove --purge -y
         sudo -E apt-get clean
-        
-    - name: Clone ErfanGSI Source Code
+
+    - name: Clone ErfanGSI Source Code & Zip
       run: |
         git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
-        
+        mkdir final
+        tar -Jcvf final/ErfanGSIs.tar.xz ErfanGSIs
+
     - name: Set Up ErfanGSI Requirements
       run: |
         sudo chmod -R 777 ErfanGSIs
         cd ErfanGSIs
         sudo bash setup.sh
-        
+
     - name: Download Stock Rom & Generate GSI
       run: |
         sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
-        
+
     - name: Zip GSI Images
       run: |
-        mkdir final
-        tar -Jcvf final/$ROM_NAME-Aonly.xz output/$ROM_NAME-Aonly*
-        tar -Jcvf final/$ROM_NAME-AB.xz output/$ROM_NAME-AB*
-        
+        tar -Jcvf ../final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
+        tar -Jcvf ../final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
+
+    - name: Upload ErfanGSI Source Code
+      uses: actions/upload-artifact@v2
+      with:
+        name: ErfanGSI-Source-Code
+        path: ../final/ErfanGSIs.tar.xz
+        if-no-files-found: error
+
     - name: Upload Aonly GSI Images
       uses: actions/upload-artifact@v2
       with:
         name: Aonly-Image
-        path: final/*Aonly.xz
+        path: ../final/*Aonly.xz
         if-no-files-found: error
 
     - name: Upload AB GSI Images
       uses: actions/upload-artifact@v2
       with:
         name: AB-Image
-        path: final/*AB.xz
+        path: ../final/*AB.xz
         if-no-files-found: error
