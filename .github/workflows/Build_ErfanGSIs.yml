@@ -58,8 +58,7 @@ jobs:
     - name: Clone ErfanGSI Source Code & Zip
       run: |
         git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
-        mkdir final
-        tar -Jcvf final/ErfanGSIs.tar.xz ErfanGSIs
+        tar -Jcvf ErfanGSIs.tar.xz ErfanGSIs
 
     - name: Set Up ErfanGSI Requirements
       run: |
@@ -73,26 +72,28 @@ jobs:
 
     - name: Zip GSI Images
       run: |
-        tar -Jcvf ../final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
-        tar -Jcvf ../final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
+       mkdir final
+       tar -Jcvf final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
+       tar -Jcvf final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
+       cp /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs.tar.xz final/ErfanGSIs.tar.xz
 
     - name: Upload ErfanGSI Source Code
       uses: actions/upload-artifact@v2
       with:
         name: ErfanGSI-Source-Code
-        path: ../final/ErfanGSIs.tar.xz
+        path: final/ErfanGSIs.tar.xz
         if-no-files-found: error
 
     - name: Upload Aonly GSI Images
       uses: actions/upload-artifact@v2
       with:
         name: Aonly-Image
-        path: ../final/*Aonly.xz
+        path: final/*Aonly.xz
         if-no-files-found: error
 
     - name: Upload AB GSI Images
       uses: actions/upload-artifact@v2
       with:
         name: AB-Image
-        path: ../final/*AB.xz
+        path: final/*AB.xz
         if-no-files-found: error
