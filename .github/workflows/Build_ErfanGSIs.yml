@@ -57,7 +57,7 @@ jobs:
 
     - name: Clone ErfanGSI Source Code & Zip
       run: |
-        git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
+        git clone --recurse-submodules https://github.com/zhz8888/ErfanGSIs.git
         tar -Jcvf ErfanGSIs.tar.xz ErfanGSIs
 
     - name: Set Up ErfanGSI Requirements
