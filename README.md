@@ -12,8 +12,10 @@
 
 ## 附：ErfanGSI支持的ROM ##
 > `ROM_NAME`里填一摸一样的，下的ROM也要一样；Generic是（类）原生的意思。
+
 ### 9 Pie： ###
 <details markdown='1'><summary>点击展开/收起</summary>
+
 ColorOS	
 Flyme
 Generic
@@ -26,13 +28,17 @@ Pixel
 Xperia	
 ZUI	
 ZenUI
+
 ### 10 Q： ###
 <details markdown='1'><summary>点击展开/收起</summary>
+
 Generic
 MIUI	
 OxygenOS
 Pixel
+
 ### 11 R： ###
 <details markdown='1'><summary>点击展开/收起</summary>
+
 Generic	
 Pixel
