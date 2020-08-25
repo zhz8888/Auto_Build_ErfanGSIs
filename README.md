@@ -14,9 +14,13 @@
 
 ### 更改内容
 <details markdown='1'><summary>点击展开/收起</summary>
+
 1.使用 Github Actions 项目上传，避免随时间的推移出现的上传成功但无法下载或直接上传失败的问题
+
 2.更改了压缩方式，使上传文件体积减小，也加快了下载速度
+
 3.把不同的镜像分别打包上传，避免无效下载，缩短了下载时间
+
 4.增加了打包源代码的操作，方便更新和获取源代码
 </details>
 
@@ -25,30 +29,15 @@
 
 ### 9 Pie：
 <details markdown='1'><summary>点击展开/收起</summary>
->ColorOS	
-Flyme
-Generic
-MIUI	
-Moto	
-Nubia	
-OneUI	
-OxygenOS	
-Pixel	
-Xperia	
-ZUI	
-ZenUI
+>ColorOS Flyme Generic MIUI Moto Nubia OneUI OxygenOS Pixel Xperia ZUI ZenUI
 </details>
 
 ### 10 Q：
 <details markdown='1'><summary>点击展开/收起</summary>
->Generic
-MIUI	
-OxygenOS
-Pixel
+>Generic MIUI OxygenOS Pixel
 </details>
 
 ### 11 R：
 <details markdown='1'><summary>点击展开/收起</summary>
->Generic	
-Pixel
+>Generic Pixel
 </details>
