@@ -1,6 +1,4 @@
-<p align="center">
-Auto_Build_ErfanGSIs
-</p>
+<h1 align="center"> Auto_Build_ErfanGSIs </h1>
 
 <p align="center">
 	一个基于Github Actions制作的自动编译exTHmUI的脚本。 
@@ -15,22 +13,22 @@ Auto_Build_ErfanGSIs
 > ROM_NAME里填一摸一样的，下的ROM也要一样；Generic是（类）原生的意思
 ### 9 Pie： ### 
 > ColorOS	
-Flyme
-Generic
-MIUI	
-Moto	
-Nubia	
-OneUI	
-OxygenOS	
-Pixel	
-Xperia	
-ZUI	
-ZenUI
+  Flyme
+  Generic
+  MIUI	
+  Moto	
+  Nubia	
+  OneUI	
+  OxygenOS	
+  Pixel	
+  Xperia	
+  ZUI	
+  ZenUI
 ### 10 Q： ###
 > Generic
-MIUI	
-OxygenOS
-Pixel
+  MIUI	
+  OxygenOS
+  Pixel
 ### 11 R： ###
 > Generic	
-Pixel
+  Pixel
