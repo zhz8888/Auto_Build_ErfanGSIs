@@ -1,4 +1,6 @@
-# Auto_Build_ErfanGSIs  
+<p align="center">
+Auto_Build_ErfanGSIs
+</p>
 
 <p align="center">
 	一个基于Github Actions制作的自动编译exTHmUI的脚本。 
