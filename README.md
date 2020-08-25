@@ -10,13 +10,13 @@
 - 然后，按右上角的Star小星星就可以开始了！
 - 最后，点击上面的`Actions`，再点击`Auto_Build_ErfanGSIs`，在`Artifacts`里即可看到上传的文件，点击即可下载。 
 
-## 附：ErfanGSI支持的ROM ##
+## 附：ErfanGSI支持的ROM
 > `ROM_NAME`里填一摸一样的，下的ROM也要一样；Generic是（类）原生的意思。
 
-### 9 Pie： ###
+#### 9 Pie：
 <details markdown='1'><summary>点击展开/收起</summary>
 
-ColorOS	
+>ColorOS	
 Flyme
 Generic
 MIUI	
@@ -29,16 +29,16 @@ Xperia
 ZUI	
 ZenUI
 
-### 10 Q： ###
+#### 10 Q：
 <details markdown='1'><summary>点击展开/收起</summary>
 
-Generic
+>Generic
 MIUI	
 OxygenOS
 Pixel
 
-### 11 R： ###
+#### 11 R：
 <details markdown='1'><summary>点击展开/收起</summary>
 
-Generic	
+>Generic	
 Pixel
