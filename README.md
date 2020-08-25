@@ -29,15 +29,15 @@
 
 ### 9 Pie：
 <details markdown='1'><summary>点击展开/收起</summary>
->ColorOS Flyme Generic MIUI Moto Nubia OneUI OxygenOS Pixel Xperia ZUI ZenUI
+> ColorOS Flyme Generic MIUI Moto Nubia OneUI OxygenOS Pixel Xperia ZUI ZenUI
 </details>
 
 ### 10 Q：
 <details markdown='1'><summary>点击展开/收起</summary>
->Generic MIUI OxygenOS Pixel
+> Generic MIUI OxygenOS Pixel
 </details>
 
 ### 11 R：
 <details markdown='1'><summary>点击展开/收起</summary>
->Generic Pixel
+> Generic Pixel
 </details>
