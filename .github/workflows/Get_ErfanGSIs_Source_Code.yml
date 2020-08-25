@@ -24,9 +24,9 @@ jobs:
 
     - name: Clone ErfanGSI Source Code & Zip
       run: |
-#       下面这条是原代码，默认使用
+#       下面这条是Erfan的源代码，默认使用
         git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
-#       下面这条是我本人修改后的源代码，默认注释，如需使用请删除前面的 '#' 并注释掉上面的代码使用，否则会有冲突
+#       下面这条是我本人修改后的源代码，默认注释，如需使用请删除前面的 '#' 并注释掉上面的代码，否则会有冲突
 #       git clone --recurse-submodules https://github.com/zhz8888/ErfanGSIs.git
         tar -Jcvf ErfanGSIs.tar.xz ErfanGSIs
 
