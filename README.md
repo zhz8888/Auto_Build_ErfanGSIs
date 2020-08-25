@@ -10,7 +10,7 @@
 - 然后，按右上角的 Star 小星星就可以开始了！
 - 最后，点击上面的`Actions`，再点击`Auto_Build_ErfanGSIs`，在`Artifacts`里即可看到上传的文件，点击即可下载。 
 
-## 注意：因为使用了不同的压缩方式，完全执行该脚本需要约两个小时，请耐心等待脚本跑完。如只需要获取源代码请看[这里](https://github.com/zhz8888/Auto_Build_ErfanGSIs/blob/master/README_G.md)。
+## 注意：因为使用了不同的压缩方式，完全执行该脚本需要约两个小时，请耐心等待脚本跑完。如只需要获取源代码请看<code>[这里](README_G.md)</code>。
 
 ### 更改内容
 <details markdown='1'><summary>点击展开/收起</summary>
