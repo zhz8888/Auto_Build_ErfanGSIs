@@ -22,6 +22,12 @@
 3.把不同的镜像分别打包上传，避免无效下载，缩短了下载时间
 
 4.增加了打包源代码的操作，方便更新和获取源代码
+
+2020.09.27
+删去`Get_ErfanGSIs_Source_Code.yml`,修改`Build_ErfanGSIs.yml`执行项目顺序
+
+2020.10.04
+修正`Build_ErfanGSIs.yml`错误的代码导致的脚本执行失败
 </details>
 
 ### 附： ErfanGSI 支持的 ROM
