@@ -51,16 +51,20 @@ jobs:
           mysql* \
           php*
         sudo -E apt-get update
-        sudo -E apt-get install git openjdk-8-jdk wget gzip bzip2 tar rar unzip -y
-        sudo -E apt-get autoremove --purge -y
+        sudo -E apt-get install git openjdk-8-jdk wget gzip bzip2 tar rar unzip deborphan -y
+        sudo -E apt-get -y autoremove --purge
+        sudo dpkg --list | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge
         sudo -E apt-get clean
+        sudo -E apt-get autoclean
+        sudo deborphan | xargs sudo apt-get purge -y
+        sudo -E apt -y full-upgrade
 
     - name: Clone ErfanGSI Source Code & Zip
       run: |
         git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
         tar -Jcvf ErfanGSIs.tar.xz ErfanGSIs
         mkdir final
-        cp /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs.tar.xz final/ErfanGSIs.tar.xz
+        cp ErfanGSIs.tar.xz final/ErfanGSIs.tar.xz
 
     - name: Upload ErfanGSI Source Code
       uses: actions/upload-artifact@v2
@@ -72,8 +76,7 @@ jobs:
     - name: Set Up ErfanGSI Requirements
       run: |
         sudo chmod -R 777 ErfanGSIs
-        cd ErfanGSIs
-        sudo bash setup.sh
+        sudo bash ErfanGSIs/setup.sh
 
     - name: Download Stock Rom & Generate GSI
       run: |
@@ -81,9 +84,8 @@ jobs:
 
     - name: Zip GSI Images
       run: |
-       mkdir final
-       tar -Jcvf final/$ROM_NAME-Aonly.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-Aonly*
-       tar -Jcvf final/$ROM_NAME-AB.xz /home/runner/work/Auto_Build_ErfanGSIs/Auto_Build_ErfanGSIs/ErfanGSIs/output/$ROM_NAME-AB*
+       tar -Jcvf final/$ROM_NAME-Aonly.xz ErfanGSIs/output/$ROM_NAME-Aonly*
+       tar -Jcvf final/$ROM_NAME-AB.xz ErfanGSIs/output/$ROM_NAME-AB*
 
     - name: Upload Aonly GSI Images
       uses: actions/upload-artifact@v2
